@@ -1,0 +1,14 @@
+.my-display {
+    font-weight: 300;
+    height: 100vh;
+    margin-top: 50px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: Helvetica neue, roboto;
+    
+  }
+
+  #search-input {
+    margin-top: 30px;
+}
