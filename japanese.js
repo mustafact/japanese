@@ -2,7 +2,7 @@
 
 // html documents
 
-document.body.style.background = "gray"
+document.body.style.background = "blue"
 
 let inputArea = document.getElementById("search-input")
 
