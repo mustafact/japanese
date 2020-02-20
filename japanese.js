@@ -23,6 +23,11 @@ inputArea.addEventListener("input", function(e) {
     if(inputArea.value === "") {
         displayArea.innerHTML = ""
     }    
+    
+     
+    setTimeout(() => {
+        inputArea.value = "";
+    }, 3000);
 })
 
 
