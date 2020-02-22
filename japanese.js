@@ -13,7 +13,7 @@ inputArea.addEventListener("input", function(e) {
     displayArea.innerHTML = "";
     let searchedWord = e.target.value.toLowerCase();
     let arrayToDisplay = search (searchedWord, finalArray);
-    arrayToDisplay.slice(0,5).forEach(item => {
+    arrayToDisplay.slice(0,7).forEach(item => {
         let htmlToInject = document.createElement("h4");
         htmlToInject.innerHTML = `
         <p>${item[0]} = ${item[1]}`
