@@ -71,11 +71,10 @@ combineJapaneseEnglish(Japanese, English);
 
 function search (input, array) {
     
-    let result1 = array.filter(item => item[0] === input || item[1] === input)
-    let result2 = array.filter(item => item[0].includes(input) || item[1].includes(input));
+    let result1 = array.filter(item => item[0].toLowerCase() === input || item[1].toLowerCase() === input)
+    let result2 = array.filter(item => item[0].toLowerCase().includes(input) || item[1].toLowerCase().includes(input));
 
     let result = [...result1, ...result2]
 
-    console.log(result)
     return result
 }
