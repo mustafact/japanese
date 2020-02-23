@@ -23,15 +23,12 @@ inputArea.addEventListener("input", function(e) {
     if(inputArea.value === "") {
         displayArea.innerHTML = "";
     } 
-    
-    if(inputArea.value !== null) {
-    setTimeout(() => {
-        inputArea.value = "";
-    }, 5000);
-}
-
 
 });
+
+inputArea.addEventListener("click", function(){
+    inputArea.value = ""
+})
 
 
 
@@ -76,5 +73,8 @@ function search (input, array) {
 
     let result = [...result1, ...result2]
 
-    return result
+    console.log(result)
+    return result;
 }
+
+
