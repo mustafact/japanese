@@ -14,10 +14,18 @@ inputArea.addEventListener("input", function(e) {
     let searchedWord = e.target.value.toLowerCase();
     let arrayToDisplay = search (searchedWord, finalArray);
     arrayToDisplay.slice(0,7).forEach(item => {
+        if(item[1] !== ""){
         let htmlToInject = document.createElement("h4");
         htmlToInject.innerHTML = `
         <p>${item[0]} = ${item[1]}`
         displayArea.append(htmlToInject);
+        } else {
+            let htmlToInject = document.createElement("h4");
+            htmlToInject.innerHTML = `
+            <p>${item[0]}</p>`
+            displayArea.append(htmlToInject);
+
+        }
     })
 
     if(inputArea.value === "") {
