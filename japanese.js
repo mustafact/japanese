@@ -23,10 +23,10 @@ let familyWords = "kazoku | gokazoku = family*shujin | goshujin = husband*kanai 
 
 
 function search (array, word) {
-let arraySplit = array.split("*")
-console.log(arraySplit)
+let arraySplit = array.split("*");
+console.log(arraySplit);
 let filteredArray = arraySplit.filter(item => item.toLowerCase().includes(word.toLowerCase()))
-return filteredArray
+return filteredArray;
 }
 
 
@@ -35,14 +35,14 @@ return filteredArray
 inputArea.addEventListener("input", function(e){
 displayArea.innerHTML = ""
 let word = inputArea.value
-let filteredArray = search (myVocabulary, word)
-let processedArray = filteredArray.map(item => item.split(" "))
-let reducedArray = processedArray.filter(item => item.includes(word))
-let reprocessedArray = reducedArray.map(item => item.join(" "))
-let toDisplay = [...new Set([...reprocessedArray, ...filteredArray])]
+let filteredArray = search (myVocabulary, word);
+let processedArray = filteredArray.map(item => item.split(" "));
+let reducedArray = processedArray.filter(item => item.includes(word));
+let reprocessedArray = reducedArray.map(item => item.join(" "));
+let toDisplay = [...new Set([...reprocessedArray, ...filteredArray])];
 
         toDisplay.forEach(item => {
-            let element = document.createElement("h3")
+            let element = document.createElement("h3");
             element.innerHTML = `
             <p>${item}</p>
             `
@@ -56,31 +56,42 @@ let toDisplay = [...new Set([...reprocessedArray, ...filteredArray])]
 
         if(e.target.value.toLowerCase() === "adjectives" || e.target.value.toLowerCase() === "sıfatlar" || e.target.value.toLowerCase() === "sifatlar") {
             displayArea.innerHTML = "";
-            let htmlToInject = document.createElement("div")
+            let htmlToInject = document.createElement("div");
             htmlToInject.innerHTML = `
             <h3> ookii desu - ookikunai desu || ookikatta desu - ookikunakatta desu </h3>
             <br>
             <h3> yuumei desu - yuumei dewa arimasen || yuumei deshita - yuumei dewa arimasen deshita </h3>
             `
-            displayArea.append(htmlToInject)
+            displayArea.append(htmlToInject);
+        }
+
+        if(e.target.value.toLowerCase() === "-tai") {
+            displayArea.innerHTML = "";
+            let htmlToInject = document.createElement("div");
+            htmlToInject.innerHTML = `
+            <h3> ikitai desu - ikitakunai desu || ikitakatta desu - ikitakunakatta desu </h3>
+            <br>
+            <h3> okuritai desu - okuritakunai desu || okuritakatta desu - okuritakunakatta desu </h3>
+            `
+            displayArea.append(htmlToInject);
         }
 
         if(e.target.value.toLowerCase() === "forms" ) {
             displayArea.innerHTML = "";
-            let forms = verbForms.split("*")
+            let forms = verbForms.split("*");
             
             console.log(forms)
             
             forms.forEach(item => {
-                let htmlToInject = document.createElement("h3")
-                htmlToInject.textContent = item
-                displayArea.append(htmlToInject)
+                let htmlToInject = document.createElement("h3");
+                htmlToInject.textContent = item;
+                displayArea.append(htmlToInject);
             })
         }
     
         if(e.target.value.toLowerCase() === "adj" ) {
             displayArea.innerHTML = "";
-            let forms = myAdjectives.split("*")
+            let forms = myAdjectives.split("*");
             
             console.log(forms)
             
@@ -104,8 +115,8 @@ let toDisplay = [...new Set([...reprocessedArray, ...filteredArray])]
             })
         }
 
+});
 
-})
 
 
 inputArea.addEventListener("click", function(){
