@@ -121,6 +121,7 @@ let toDisplay = [...new Set([...reprocessedArray, ...filteredArray])];
 
 inputArea.addEventListener("click", function(){
     inputArea.value = ""
+    displayArea.innerHTML = ""
 });
 
 
