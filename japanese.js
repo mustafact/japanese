@@ -19,7 +19,7 @@ let myVerbs = "agemasu => agete | agenai*aimasu => atte |awanai*akemasu => akete
 
 let verbForms = "agemasu => agete | agenai*aimasu => atte |awanai*akemasu => akete | akenai*arimasu => atte | nai*arukimasu => aruite  | arukanai*benkyoo o shimasu => benkyoo o shite | benkyoo o shinai*chigaimasu => chigatte |chigawanai*dekimasu => dekite | dekinai*demasu => dete | denai*gambarimasu => gambatte | gambaranai*hairimasu => haitte | hairanai*iimasu => itte |iwanai*ikimasu => itte | ikanai*imasu => ite | inai*irasshaimasu => irasshatte |irassharanai*itadakimasu => itadaite | itadakanai*kaerimasu => kaette | kaeranai*kaimasu => katte |kawanai*kakarimasu => kakatte | kakaranai*kakemasu => kakete | kakenai*kakimasu => kaite | kakanai*keshimasu => keshite | kesanai*ki o tsukemasu => tsukete | tsukenai*kikimasu => kiite | kikanai*kimasu => kite | konai*komimasu => konde | komanai*machimsu => matte | matanai*magarimasu => magatte | magaranai*mimasu => mite | minai*misemasu => misete | misenai*mochimasu => motta | motanai*moraimasu => moratte |morawanai*mottekimasu => mottekite | mottekonai*nomimasu => nonde | nomanai*norimasu => notte | noranai*okurimasu => okutte | okuranai*onegaishimasu => onegaishite | onegaishinai*orimasu => orite | orinai*oshiemasu => oshiete | oshienai*oshimasu => oshite | osanai*owarimasu => owatte | owaranai*shimasu => shite | shinai*shimemasu => shimete | shimenai*shitsureishimasu => shitsureishite | shitsureishinai*shitteimasu => shitte | shiranai*suimasu => sutte |suwanai*sumimasu => sunde | sumanai*tabemasu => tabete | tabenai*todokemasu => todokete | todokenai*tomemasu => tomete | tomenai*torimasu => totte | toranai*tsukaimasu => tsukatte |tsukawanai*tsukemasu => tsukete | tsukenai*tsukimasu => tsuite | tsukunai*tsukurimasu => tsukutte | tsukuranai*tsutomemasu => tsutomete | tsutomete*urimasu => utte | uranai*wakarimasu => wakatte | wakaranai*yobimsau => yonde | yobanai*yomimasu => yonde | yomanai"
 
-
+let familyWords = "kazoku | gokazoku = family*shujin | goshujin = husband*kanai | okusan = wife*kodomo | kodomosan / okosan = child*musuko | musukosan / botchan = son*musume | musumesan / ojoosan = daughter*ryooshin | goryooshin = parents*chichi | otoosan = father*haha | okaasan = mother*sofu | ojisan = grandfather*sobo | obaasan = grandmother*kyoodai | gokyoodai = brothers and sisters*ani | oniisan = older brother*ane | oneesan = older sister*otooto | otootosan = younger brother*imooto | imootosan = younger sister*mago | omagosan = grandchild*oji | ojisan = uncle*oba | obasan = aunt*oi | oigosan = nephew*mei | meigosan = niece*itoko | oitokosan = cousin"
 
 
 function search (array, word) {
@@ -81,6 +81,19 @@ let toDisplay = [...new Set([...reprocessedArray, ...filteredArray])]
         if(e.target.value.toLowerCase() === "adj" ) {
             displayArea.innerHTML = "";
             let forms = myAdjectives.split("*")
+            
+            console.log(forms)
+            
+            forms.forEach(item => {
+                let htmlToInject = document.createElement("h3")
+                htmlToInject.textContent = item
+                displayArea.append(htmlToInject)
+            })
+        }
+
+        if(e.target.value.toLowerCase() === "aile" ) {
+            displayArea.innerHTML = "";
+            let forms = familyWords.split("*")
             
             console.log(forms)
             
